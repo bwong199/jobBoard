@@ -1,0 +1,80 @@
+<section ng-controller="JobsController" data-ng-init="findOne()">
+  <div class="page-header">
+    <h1>Edit Job</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="jobForm" class="form-horizontal" data-ng-submit="update(jobForm.$valid)" novalidate>
+<fieldset>
+        <div class="form-group" show-errors>
+          <label for="title">Title</label>
+          <input name="title" type="text" data-ng-model="job.title" id="title" class="form-control" placeholder="Title" required>
+          <div ng-messages="jobForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job title is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="company">Company</label>
+          <input name="company" type="text" data-ng-model="job.company" id="company" class="form-control" placeholder="Company" required>
+          <div ng-messages="jobForm.company.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job company is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="description">Description</label>
+          <textarea name="description" type="text" data-ng-model="job.description" id="description" class="form-control" placeholder="Description" rows="8" cols="50"></textarea>
+          <div ng-messages="jobForm.description.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job description is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="requirements">Requirements</label>
+          <input name="requirements" type="text" data-ng-model="job.requirements" id="requirements" class="form-control" placeholder="Requirements" >
+          <div ng-messages="jobForm.requirements.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job requirements is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="hourly_wage">Hourly Wage</label>
+          <input name="hourly_wage" type="text" data-ng-model="job.hourly_wage" id="hourly_wage" class="form-control" placeholder="Hourly Wage" >
+          <div ng-messages="jobForm.hourly_wage.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job hourly_wage is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="state">Province</label>
+          <select name="state" ng-model="state" id="state" class="form-control" placeholder="State">
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+            <option value="YT">Yukon</option>
+          </select>
+          <div ng-messages="jobForm.state.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job province is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="contact_email">Contact Email</label>
+          <input name="contact_email" type="text" data-ng-model="job.contact_email" id="contact_email" class="form-control" placeholder="Contact Email" >
+          <div ng-messages="jobForm.contact_email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Job contact email is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default" value="Edit">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
